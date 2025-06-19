@@ -163,6 +163,7 @@ hr {
   height: auto;
   gap: 1rem;
   margin-top: 20px;
+  margin-left: -30px;
 }
 
 .gridcontainer2 img {
