@@ -16,7 +16,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--maincolor1);
-  overflow: hidden;
 }
 
 header {
