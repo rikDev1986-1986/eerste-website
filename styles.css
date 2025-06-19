@@ -83,12 +83,12 @@ h2 {
 
 }
 
-.deel h3 {
-  text-align: left;
-  padding: 0;
-  margin: 0 0 0.5rem 0;
-  font-size: 1.3rem;
-  font-style: normal;
+.tekstheader {
+  text-align: center;
+  color: white;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: bold;
+  margin: 2rem auto 1rem auto;
 }
 
 .tekstcontainer {
@@ -96,15 +96,19 @@ h2 {
  gap: 1rem;
  flex-wrap: wrap;
  color: white;
- font-style: italic;
  justify-content: center;
  padding: 1rem;
  
 }
 
+
 .deel {
   flex: 1 1 45%;
-  
+  text-align: justify;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  font-style: normal;
+  font-weight: 500;
 }
 
 
