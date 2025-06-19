@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--maincolor1);
+  overflow: hidden;
 }
 
 header {
@@ -170,7 +171,7 @@ hr {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   width: 100%;
-  margin: 1rem;
+  margin: 20px;
 }
 
 footer a {
