@@ -133,6 +133,7 @@ footer {
   grid-column: 1 / -1; 
   grid-row: 2; 
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .footer-right {
