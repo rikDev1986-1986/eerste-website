@@ -53,8 +53,7 @@ header h1 {
   width: 100vw;
   height: auto;
   gap: 1rem;
-  margin-top: 20px;
-  margin-left: -20px;
+  margin: auto;
 }
 
 .gridcontainer1 img {
@@ -62,7 +61,6 @@ header h1 {
   object-fit: cover;
   width: 100%;
   border-radius: 50%;
-  margin: 20px;
   
 }
 
