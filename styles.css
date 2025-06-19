@@ -111,6 +111,10 @@ h2 {
   font-weight: 500;
 }
 
+.deel a {
+  color: white:
+  font-weight: bold;
+}
 
 footer {
   display: grid;
