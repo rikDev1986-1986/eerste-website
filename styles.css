@@ -54,7 +54,7 @@ header h1 {
   height: auto;
   gap: 1rem;
   margin-top: 20px;
-  margin-left: -30px;
+  margin-left: -20px;
 }
 
 .gridcontainer1 img {
@@ -162,8 +162,7 @@ hr {
   width: 100vw;
   height: auto;
   gap: 1rem;
-  margin-top: 20px;
-  margin-left: -30px;
+  margin: auto;
 }
 
 .gridcontainer2 img {
