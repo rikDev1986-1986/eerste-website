@@ -83,6 +83,11 @@ h2 {
 
 }
 
+h3.textheader {
+  color: white;
+  text-align: center;
+}
+
 .tekstcontainer {
  display: flex;
  gap: 1rem;
@@ -99,10 +104,7 @@ h2 {
   
 }
 
-h3 {
-  padding: 1rem;
-  text-align: justify;
-}
+
 
 footer {
   display: grid;
