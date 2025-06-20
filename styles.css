@@ -427,3 +427,10 @@ button {
   width: 50%;
   height: 10vh;
 }
+
+@media screen and (max-width: 600px) {
+  form {
+    width: 70%;
+    padding: 0 1rem;
+  }
+}
