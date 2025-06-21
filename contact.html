@@ -31,6 +31,14 @@
           <label></label>
         <button type="submit" name="button">Verstuur</button>
         </div>
+        <script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function () {
+    setTimeout(function () {
+      window.location.href = "https://rikwebs.com/bedankt.html";
+    }, 500); // kleine vertraging
+  });
+</script>
       </form>
     </main>
 </body>
