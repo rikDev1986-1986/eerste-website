@@ -213,6 +213,7 @@ label {
   border-radius: 5px;
   border: 2px solid #ccc;
   font-size: 1rem;
+  max-width: 100%;
 }
 
 button {
