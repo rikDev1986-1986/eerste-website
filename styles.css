@@ -259,3 +259,18 @@ button:hover {
   padding: 2rem;
   margin-top: 5vh;
 }
+
+.portfolio-links {
+  margin-top: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.portfolio-links li {
+  margin: 0.3rem 0;
+}
+
+.portfolio-links a {
+  color: white;
+  text-decoration: underline;
+}
