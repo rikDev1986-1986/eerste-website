@@ -251,3 +251,11 @@ button:hover {
     width: 100%;
   }
 }
+
+.tekstheader {
+  color: white;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 5vh;
+}
