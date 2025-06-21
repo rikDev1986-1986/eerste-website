@@ -22,7 +22,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(360deg, rgba(255, 106, 0, 0.84) 40%, var(--maincolor1));
+  background-image: linear-gradient(360deg, rgba(255, 106, 0, 1) 40%, var(--maincolor1));
   width: 90vw;
   aspect-ratio: 7 / 1;
   box-shadow: 0 0 20px 10px var(--maincolor1);
