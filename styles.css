@@ -6,6 +6,7 @@
   --white: #fff;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --max-width: 1200px;
+  --btn-hover: darkblue;
 }
 
 
@@ -69,7 +70,7 @@ body {
 }
 
 .hero-btn:hover {
-  background-color: red;
+  background-color: var(--btn-hover);
 }
 
 main {
