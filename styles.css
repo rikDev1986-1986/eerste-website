@@ -8,6 +8,7 @@
   --max-width: 1200px;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -18,19 +19,57 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-header {
-  background: var(--primary);
-  color: var(--white);
-  padding: 2rem;
+.hero {
+  background-image: url("header_desktop.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   text-align: center;
-  border-radius: 10px;
-  margin-bottom: 2rem;
+  color: white;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* donkere overlay voor leesbaarheid */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: darkorange;
 }
 
 main {
@@ -39,6 +78,11 @@ main {
   margin: 0 auto;
   width: 100%;
   padding: 1rem;
+}
+
+main h2,
+main p {
+  text-align: center;
 }
 
 .contact-form {
