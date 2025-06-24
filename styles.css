@@ -85,6 +85,10 @@ main p {
   text-align: center;
 }
 
+header h1 {
+  text-align: center;
+}
+
 .contact-form {
   background-color: var(--white);
   padding: 2rem;
