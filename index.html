@@ -6,7 +6,6 @@
     <title>Rikwebs Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <script>
-      // Toon juiste taal op basis van browserinstellingen
       document.addEventListener("DOMContentLoaded", () => {
         const userLang = navigator.language || navigator.userLanguage;
         const showLang = userLang.startsWith("nl") ? "nl" : "en";
@@ -15,6 +14,24 @@
             ? "block"
             : "none";
         });
+
+        // Dynamische projectweergave vanuit JSON
+        fetch("projects.json")
+          .then(response => response.json())
+          .then(projects => {
+            const container = document.querySelector(".projects-grid");
+            projects.forEach(project => {
+              const card = document.createElement("div");
+              card.className = "project-card";
+              card.innerHTML = `
+                <a href="${project.link}" target="_blank">
+                  <img src="${project.image}" alt="${project.title}" />
+                  <h4>${project.title}</h4>
+                </a>
+              `;
+              container.appendChild(card);
+            });
+          });
       });
     </script>
   </head>
@@ -39,12 +56,9 @@
 
       <section class="projects">
         <h3>Projecten / Projects</h3>
-        <ul>
-          <li>
-            <a href="projects/qr-code/index.html">QR Code Component</a>
-          </li>
-          <!-- Voeg hier meer projecten toe -->
-        </ul>
+        <div class="projects-grid">
+          <!-- Projecten worden hier dynamisch ingeladen via JSON -->
+        </div>
       </section>
     </main>
 
