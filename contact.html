@@ -1,47 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact Rik Dev voor websites op maat." />
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="lang-nl">Contactformulier</h1>
+      <h1 class="lang-en">Contact Form</h1>
+    </header>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Neem contact op met RikWebs voor een betaalbare en professionele website. Snel antwoord en transparante prijzen.">
-  <link rel="stylesheet" href="styles.css">
-  <title>Contact</title>
-</head>
-
-<body>
-  <header><h1>Contact Formulier</h1></header>
     <main>
-      <form action="https://formspree.io/f/mdkzlzjd" method="POST" class="contact-form">
-        <input type="hidden" name="_redirect" value="https://rikwebs.com/bedankt.html">
-        <div class="namecontainer">
-        <label for="naam">Naam:
-        </label>
-        <input class="invoervelden" type="text" id="naam" name="naam" required>
-        </div>
-        <div class="emailcontainer">
-        <label for="email">Email:</label>
-        <input class="invoervelden" type="email" id="email" name="email" required>
-        </div>
-        <div class="tekstvakcontainer">
-        <label for="tekstvak">Jouw vraag:</label>
-        <textarea class="invoervelden" 
-        type="text" id="tekstvak" name="tekstvak" required></textarea>
-        </div>
-        <div class="buttoncontainer">
-          <label></label>
-        <button type="submit" name="button">Verstuur</button>
-        </div>
-        <script>
-  const form = document.querySelector("form");
-  form.addEventListener("submit", function () {
-    setTimeout(function () {
-      window.location.href = "https://rikwebs.com/bedankt.html";
-    }, 500); // kleine vertraging
-  });
-</script>
+      <form action="https://formspree.io/f/mdkzlzjd" method="POST">
+        <input type="hidden" name="_redirect" value="bedankt.html" />
+
+        <label for="naam" class="lang-nl">Naam:</label>
+        <label for="naam" class="lang-en">Name:</label>
+        <input type="text" id="naam" name="naam" required />
+
+        <label for="email" class="lang-nl">E-mail:</label>
+        <label for="email" class="lang-en">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="bericht" class="lang-nl">Bericht:</label>
+        <label for="bericht" class="lang-en">Message:</label>
+        <textarea id="bericht" name="bericht" required></textarea>
+
+        <button type="submit" class="lang-nl">Verstuur</button>
+        <button type="submit" class="lang-en">Send</button>
       </form>
     </main>
-</body>
 
+    <script>
+      const nl = document.querySelectorAll(".lang-nl");
+      const en = document.querySelectorAll(".lang-en");
+      const isEnglish = navigator.language.startsWith("en");
+      nl.forEach(el => el.style.display = isEnglish ? "none" : "block");
+      en.forEach(el => el.style.display = isEnglish ? "block" : "none");
+    </script>
+  </body>
 </html>

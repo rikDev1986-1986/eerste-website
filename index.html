@@ -1,71 +1,55 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Goedkope website laten maken? Rikwebs bouwt professionele websites voor zzp’ers, freelancers en kleine bedrijven. Betaalbaar en snel online.">
-    <link rel="stylesheet" href="styles.css">
-    <title>Mijn eerste echte website!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rikwebs Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      // Toon juiste taal op basis van browserinstellingen
+      document.addEventListener("DOMContentLoaded", () => {
+        const userLang = navigator.language || navigator.userLanguage;
+        const showLang = userLang.startsWith("nl") ? "nl" : "en";
+        document.querySelectorAll(".lang").forEach(el => {
+          el.style.display = el.classList.contains(`lang-${showLang}`)
+            ? "block"
+            : "none";
+        });
+      });
+    </script>
   </head>
   <body>
     <header>
-      <h1>Mijn eerste website!</h1>
-      <div class="hamburgermenu" aria-label="Open navigatiemenu">&#9776;</div>
+      <h1 class="lang lang-nl">Portfolio van Rik – Front-end Developer in opleiding</h1>
+      <h1 class="lang lang-en">Rik's Portfolio – Front-end Developer in Training</h1>
     </header>
-    <main>
-      <h2>Toen ik begon met werken, maakte ik veel kilometers en verloor ik veel kilo’s – wel 25 kilo in slechts 3 à 4 maanden tijd!</h2>
-      <div class="gridcontainer1">
-        <img src="foto1.webp" alt="Rik aan het werk" loading="lazy">
-        <img src="foto2.webp" alt="Rik knipoog" loading="lazy">
-        <img src="foto3.webp" alt="Rik met scooterhelm op, natte helm" loading="lazy">
-        <img src="foto4.webp" alt="Rik lacht" loading="lazy">
-      </div>
-      
-<h3 class="tekstheader">Mijn verhaal</h3>
-      <div class="tekstcontainer">
 
-<article class="deel deel-links">
-  Ik ben weer gaan studeren – iets wat ik eerder nooit heb kunnen afmaken.  
-  Toen ik in een andere stad ging werken, had ik ’s avonds weinig te doen.  
-  Ik greep mijn kans, kocht een Chromebook en ben via
-  <a href="https://www.freecodecamp.org" target="_blank" rel="noopener">freeCodeCamp.org</a>
-  begonnen aan het <strong>Full-Stack Developer</strong>-traject. 
-  Na drie maanden heb ik HTML en CSS aardig onder de knie.
-</article>
-<article class="deel deel-rechts">
-  Hier laat ik mijn eerste werk zien.  
-  Mijn doel? Professionele websites bouwen, zodat ik niet voor altijd op de fiets hoef te bezorgen.<br><br>
-  Portfolio:<br>Mijn verhaal, een aantal foto's en mijn eerste opzet voor een echte website.<br><br>
-  Stuur me gerust een <a href="contact.html">bericht via het contactformulier</a> als je geïnteresseerd bent – ik antwoord altijd nog dezelfde dag!
-</article>
-      </div>
-      <div class="gridcontainer2">
-        <img src="foto10.webp" alt="Rik aan het studeren, fiets op achtergrond" loading="lazy">
-        <img src="foto11.webp" alt="Laptop" loading="lazy">
-        <img src="foto9.webp" alt="Fiets van thuisbezorgd.nl met kratjes" loading="lazy">
-        <img src="foto13.webp" alt="apparaat en heet water kan." loading="lazy">
-        <img src="foto14.webp" alt="Rik aan het studeren, je ziet laptop met koekje ernaast" loading="lazy">
-      </div>
+    <main>
+      <section class="lang lang-nl">
+        <h2>Welkom op mijn portfolio</h2>
+        <p>Ik leer front-end development via FreeCodeCamp en plaats hier mijn projecten.</p>
+        <p>Stuur gerust een <a href="contact.html">bericht via het contactformulier</a>.</p>
+      </section>
+
+      <section class="lang lang-en">
+        <h2>Welcome to my portfolio</h2>
+        <p>I'm learning front-end development through FreeCodeCamp and share my projects here.</p>
+        <p>Feel free to <a href="contact.html">send me a message</a>.</p>
+      </section>
+
+      <section class="projects">
+        <h3>Projecten / Projects</h3>
+        <ul>
+          <li>
+            <a href="projects/qr-code/index.html">QR Code Component</a>
+          </li>
+          <!-- Voeg hier meer projecten toe -->
+        </ul>
+      </section>
     </main>
-    <hr>
+
     <footer>
-  <div class="footer-left">
-    <p>Portfolio:</p>
-    <ul class="portfolio-links">
-      <!-- Voeg hier later je links toe -->
-      <!-- <li><a href="project1.html">Website voor Klant A</a></li> -->
-    </ul>
-  </div>
-  <div class="footer-right">
-    <nav>
-      <a href="contact.html" target="_blank">Contact formulier</a>
-    </nav>
-  </div>
-  <div class="footer-center">
-    <p>
-      Copyright - Rik Dev 2025
-    </p>
-  </div>
-</footer>
+      <p>&copy; Rikwebs 2025</p>
+    </footer>
   </body>
 </html>
