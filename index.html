@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rikwebs Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const userLang = navigator.language || navigator.userLanguage;
@@ -58,7 +63,7 @@
         <p>Feel free to <a href="contact.html">send me a message</a>.</p>
       </section>
 
-      <section class="projects">
+      <section class="projects" id="portfolio">
         <h3>Projecten / Projects</h3>
         <div class="projects-grid">
           <!-- Projecten worden hier dynamisch ingeladen via JSON -->
