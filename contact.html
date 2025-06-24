@@ -14,23 +14,31 @@
     </header>
 
     <main>
-      <form action="https://formspree.io/f/mdkzlzjd" method="POST">
+      <form action="https://formspree.io/f/mdkzlzjd" method="POST" class="contact-form">
         <input type="hidden" name="_redirect" value="bedankt.html" />
 
-        <label for="naam" class="lang-nl">Naam:</label>
-        <label for="naam" class="lang-en">Name:</label>
-        <input type="text" id="naam" name="naam" required />
+        <div class="form-group">
+          <label for="naam" class="lang-nl">Naam:</label>
+          <label for="naam" class="lang-en">Name:</label>
+          <input type="text" id="naam" name="naam" required />
+        </div>
 
-        <label for="email" class="lang-nl">E-mail:</label>
-        <label for="email" class="lang-en">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <div class="form-group">
+          <label for="email" class="lang-nl">E-mail:</label>
+          <label for="email" class="lang-en">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
 
-        <label for="bericht" class="lang-nl">Bericht:</label>
-        <label for="bericht" class="lang-en">Message:</label>
-        <textarea id="bericht" name="bericht" required></textarea>
+        <div class="form-group">
+          <label for="bericht" class="lang-nl">Bericht:</label>
+          <label for="bericht" class="lang-en">Message:</label>
+          <textarea id="bericht" name="bericht" rows="6" required></textarea>
+        </div>
 
-        <button type="submit" class="lang-nl">Verstuur</button>
-        <button type="submit" class="lang-en">Send</button>
+        <div class="form-group">
+          <button type="submit" class="lang-nl">Verstuur</button>
+          <button type="submit" class="lang-en">Send</button>
+        </div>
       </form>
     </main>
 
