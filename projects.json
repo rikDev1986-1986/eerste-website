@@ -1,5 +1,10 @@
 [
   {
+  "title": "blog-preview-card",
+  "link": "https://rikdev1986-1986.github.io/blog-preview-card/",
+  "image": "blog-preview-card.webp"
+},
+  {
     "title": "QR Code Component",
     "link": "https://rikdev1986-1986.github.io/qr-code/",
     "image": "qr-code-preview.webp"
