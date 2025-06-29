@@ -261,14 +261,6 @@ footer {
   z-index: 999;
 }
 
-.hamburger {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: white; /* wit zodat het op zwart zichtbaar is */
-  cursor: pointer;
-}
-
 .nav-links {
   display: none;
   position: absolute;
@@ -302,37 +294,6 @@ footer {
   display: block;
 }
 
-/* === Hamburger Menu === */
-
-.hamburger {
-  position: sticky;
-  top: 1rem;
-  right: 1rem;
-  z-index: 999;
-  width: 40px;
-  height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  padding: 0;
-}
-
-.hamburger span {
-  height: 4px;
-  width: 100%;
-  background-color: white;
-  display: block;
-  border-radius: 2px;
-  transition: background 0.3s;
-}
-
-/* Scrollkleur switch */
-.hamburger.scrolled span {
-  background-color: black;
-}
 
 /* Responsive grootte */
 @media (min-width: 768px) {
@@ -350,20 +311,37 @@ footer {
 }
 
 .hamburger {
-  position: sticky;
+  position: fixed;
   top: 1rem;
   right: 1rem;
   z-index: 999;
-  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
   background: transparent;
   border: none;
-  color: white;
+  padding: 0;
   cursor: pointer;
-  margin-left: auto;
+  color: white; /* kleur bovenaan */
 }
 
 .hamburger.scrolled {
   color: black;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.hamburger.scrolled span {
+  background-color: black;
 }
 
 @media (min-width: 768px) {
