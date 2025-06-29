@@ -255,7 +255,7 @@ footer {
 }
 
 .main-nav {
-  position: absolute;
+  position: sticky;
   top: 1rem;
   right: 1rem;
   z-index: 999;
