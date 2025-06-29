@@ -2,21 +2,25 @@
   {
   "title": "social-links-profile",
   "link": "https://rikdev1986-1986.github.io/social-links-profile/",
-  "image": "social-links-profile.webp"
+  "image": "social-links-profile.webp",
+  "date": "2025-06-29"
 },
   {
   "title": "blog-preview-card",
   "link": "https://rikdev1986-1986.github.io/blog-preview-card/",
-  "image": "blog-preview-card.webp"
+  "image": "blog-preview-card.webp",
+  "date": "2025-06-26"
 },
   {
     "title": "QR Code Component",
     "link": "https://rikdev1986-1986.github.io/qr-code/",
-    "image": "qr-code-preview.webp"
+    "image": "qr-code-preview.webp,
+    "date": "2025-06-24"
   },
   {
     "title": "Simple omelette recipe",
     "link": "https://rikdev1986-1986.github.io/Simple-Omelette-Recipe/",
-    "image": "recipe-preview.webp"
+    "image": "recipe-preview.webp",
+    "date": "2025-06-23"
   }
 ]
