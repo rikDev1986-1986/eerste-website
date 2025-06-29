@@ -19,24 +19,6 @@
             ? "block"
             : "none";
         });
-
-        // Dynamische projectweergave vanuit JSON
-        fetch("projects.json")
-          .then(response => response.json())
-          .then(projects => {
-            const container = document.querySelector(".projects-grid");
-            projects.forEach(project => {
-              const card = document.createElement("div");
-              card.className = "project-card";
-              card.innerHTML = `
-                <a href="${project.link}" target="_blank">
-                  <img src="${project.image}" alt="${project.title}" />
-                  <h4>${project.title}</h4>
-                </a>
-              `;
-              container.appendChild(card);
-            });
-          });
       });
     </script>
   </head>
