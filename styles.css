@@ -1,6 +1,6 @@
 :root {
   --bg: #f4f4f4;
-  --primary: blue;
+  --primary: #3267e0;
   --text: #222;
   --text-light: #555;
   --white: #fff;
@@ -231,6 +231,8 @@ footer {
   align-items: center;
   gap: 0.5rem;
   margin: 2rem 0 1rem;
+  justify-content: center;
+  margin: 3rem 0 1rem;
 }
 
 .diamond {
@@ -243,5 +245,14 @@ footer {
 .month-label {
   font-weight: bold;
   color: var(--primary);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
+
+.projects h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+
+
