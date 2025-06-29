@@ -9,7 +9,6 @@
   --btn-hover: darkblue;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -42,7 +41,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* donkere overlay voor leesbaarheid */
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
@@ -90,6 +89,29 @@ header h1 {
   text-align: center;
 }
 
+section {
+  margin-bottom: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: auto;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Contactformulier */
 .contact-form {
   background-color: var(--white);
   padding: 2rem;
@@ -135,13 +157,10 @@ header h1 {
 }
 
 .contact-form button:hover {
-  background-color: #0044cc; /* of iets donkerder blauw */
+  background-color: #0044cc;
 }
 
-section {
-  margin-bottom: 2rem;
-}
-
+/* Projecten */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -174,15 +193,41 @@ section {
   color: var(--text);
 }
 
-a {
+.project-date {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 0.25rem;
+}
+
+.projects h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Tijdlijn */
+.month-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 3rem 0 1rem;
+  justify-content: center;
+}
+
+.diamond {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary);
+  transform: rotate(45deg);
+}
+
+.month-label {
+  font-weight: bold;
   color: var(--primary);
-  text-decoration: none;
+  font-size: 1.2rem;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
+/* Volg-mij sectie */
 .follow-me {
   text-align: center;
   margin: 3rem 1rem;
@@ -207,71 +252,54 @@ a:hover {
   transform: scale(1.1);
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #eee;
-  font-size: 0.9rem;
-  color: var(--text-light);
-  margin-top: auto;
-}
-
-.lang {
-  display: none;
-}
-
-.project-date {
-  font-size: 0.8rem;
-  color: var(--text-light);
-  margin-top: 0.25rem;
-}
-
-.month-divider {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 2rem 0 1rem;
-  justify-content: center;
-  margin: 3rem 0 1rem;
-}
-
-.diamond {
-  width: 12px;
-  height: 12px;
-  background-color: var(--primary);
-  transform: rotate(45deg);
-}
-
-.month-label {
-  font-weight: bold;
-  color: var(--primary);
-  font-size: 1.2rem;
-}
-
-.projects h3 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.main-nav {
-  position: sticky;
+/* Hamburger menu */
+.hamburger {
+  position: fixed;
   top: 1rem;
   right: 1rem;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: white;
 }
 
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.hamburger.scrolled span {
+  background-color: black;
+}
+
+.hamburger.scrolled {
+  color: black;
+}
+
+/* Navigatiemenu */
 .nav-links {
   display: none;
-  position: absolute;
-  top: 3.5rem;
+  position: fixed;
+  top: 4.5rem;
   right: 1rem;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.95);
   padding: 1rem;
   border-radius: 8px;
   list-style: none;
   z-index: 998;
   min-width: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-links li {
@@ -294,64 +322,8 @@ footer {
   display: block;
 }
 
-
-/* Responsive grootte */
-@media (min-width: 768px) {
-  .hamburger {
-    width: 50px;
-    height: 35px;
-  }
-}
-
-@media (max-width: 767px) {
-  .hamburger {
-    width: 35px;
-    height: 25px;
-  }
-}
-
-.hamburger {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 40px;
-  height: 30px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: white; /* kleur bovenaan */
-}
-
-.hamburger.scrolled {
-  color: black;
-}
-
-.hamburger span {
-  height: 4px;
-  width: 100%;
-  background-color: white;
-  display: block;
-  border-radius: 2px;
-  transition: background 0.3s;
-}
-
-.hamburger.scrolled span {
-  background-color: black;
-}
-
+/* Responsiveness */
 @media (min-width: 768px) {
   .hamburger {
     font-size: 3rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .hamburger {
-    font-size: 2rem;
-  }
-}
+    width:
