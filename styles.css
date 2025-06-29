@@ -1,15 +1,22 @@
+/* === Rikwebs Flitsende Modern Style.css === */
+
 :root {
   --bg: #f4f4f4;
+  --bg-alt: #eef1f6;
   --primary: #3267e0;
+  --accent: #00c6ff;
   --text: #222;
   --text-light: #555;
   --white: #fff;
   --card-shadow: rgba(0, 0, 0, 0.1);
   --max-width: 1200px;
-  --btn-hover: darkblue;
+  --btn-hover: #254fcf;
+  --glass: rgba(255, 255, 255, 0.7);
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,8 +29,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
+/* === HEADER === */
 .hero {
   background-image: url("header_desktop.webp");
   background-size: cover;
@@ -72,46 +81,250 @@ body {
   background-color: var(--btn-hover);
 }
 
+/* === MAIN SECTIONS === */
 main {
   flex: 1;
   max-width: var(--max-width);
   margin: 0 auto;
   width: 100%;
-  padding: 1rem;
-}
-
-main h2,
-main p {
-  text-align: center;
-}
-
-header h1 {
-  text-align: center;
+  padding: 2rem 1rem;
 }
 
 section {
+  padding: 4rem 1rem;
   margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease both;
 }
 
+section:nth-of-type(odd) {
+  background: linear-gradient(to bottom right, #f0f4ff, #e3ecff);
+}
+
+section:nth-of-type(even) {
+  background: linear-gradient(to bottom right, #fff5f5, #ffeaea);
+}
+
+main h2 {
+  font-size: 2rem;
+  position: relative;
+  display: block;
+  margin-block-end: 2rem;
+  color: var(--primary);
+  text-align: center;
+  text-shadow: 0 0 5px #00c6ff,
+    0 0 10px #00c6ff,
+    0 0 20px #00c6ff,
+    0 0 40px #00c6ff;
+}
+
+
+main h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  border-radius: 3px;
+}
+
+main p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* === PROJECTS === */
+.projects {
+  background: linear-gradient(to bottom, #fff, #eef1f6);
+}
+
+.projects h3 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.projects h3::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 4px;
+}
+
+.month-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.diamond {
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent);
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+.month-label {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.3rem;
+  text-shadow: 0 1px 2px white;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.project-card {
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  border-left: 6px solid var(--primary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-left-color: var(--accent);
+  box-shadow: 0 12px 25px rgba(0, 198, 255, 0.4);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h4 {
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.project-date {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin: -1rem 1rem 1rem;
+  text-align: right;
+}
+
+/* === FOLLOW ME === */
+.follow-me {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: var(--bg);
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.social-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+}
+
+/* === FOOTER === */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   background: #eee;
   font-size: 0.9rem;
   color: var(--text-light);
   margin-top: auto;
 }
 
-a {
-  color: var(--primary);
-  text-decoration: none;
+/* === NAVIGATION === */
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: white;
 }
 
-a:hover {
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.hamburger.scrolled span {
+  background-color: black;
+}
+
+.nav-links {
+  display: none;
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 1rem;
+  border-radius: 8px;
+  list-style: none;
+  z-index: 998;
+  min-width: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links li {
+  margin: 0.5rem 0;
+  text-align: right;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+
+.nav-links a:hover {
   text-decoration: underline;
 }
 
-/* Contactformulier */
+.nav-links.show {
+  display: block;
+}
+
+/* === FORM === */
 .contact-form {
   background-color: var(--white);
   padding: 2rem;
@@ -160,170 +373,22 @@ a:hover {
   background-color: #0044cc;
 }
 
-/* Projecten */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.project-card {
-  background: var(--white);
-  border-left: 5px solid var(--primary);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px var(--card-shadow);
-  transition: transform 0.2s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-}
-
-.project-card h4 {
-  padding: 1rem;
-  font-size: 1.1rem;
-  color: var(--text);
-}
-
-.project-date {
-  font-size: 0.8rem;
-  color: var(--text-light);
-  margin-top: 0.25rem;
-}
-
-.projects h3 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Tijdlijn */
-.month-divider {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 3rem 0 1rem;
-  justify-content: center;
-}
-
-.diamond {
-  width: 12px;
-  height: 12px;
-  background-color: var(--primary);
-  transform: rotate(45deg);
-}
-
-.month-label {
-  font-weight: bold;
-  color: var(--primary);
-  font-size: 1.2rem;
-}
-
-/* Volg-mij sectie */
-.follow-me {
-  text-align: center;
-  margin: 3rem 1rem;
-  font-size: 1rem;
-  color: var(--text-light);
-}
-
-.social-icons {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.social-icons img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.2s ease;
-}
-
-.social-icons img:hover {
-  transform: scale(1.1);
-}
-
-/* Hamburger menu */
-.hamburger {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 40px;
-  height: 30px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: white;
-}
-
-.hamburger span {
-  height: 4px;
-  width: 100%;
-  background-color: white;
-  display: block;
-  border-radius: 2px;
-  transition: background 0.3s;
-}
-
-.hamburger.scrolled span {
-  background-color: black;
-}
-
-.hamburger.scrolled {
-  color: black;
-}
-
-/* Navigatiemenu */
-.nav-links {
-  display: none;
-  position: fixed;
-  top: 4.5rem;
-  right: 1rem;
-  background-color: rgba(0, 0, 0, 0.95);
-  padding: 1rem;
-  border-radius: 8px;
-  list-style: none;
-  z-index: 998;
-  min-width: 150px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.nav-links li {
-  margin: 0.5rem 0;
-  text-align: right;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-.nav-links.show {
-  display: block;
-}
-
-/* Responsiveness */
+/* === RESPONSIVE === */
 @media (min-width: 768px) {
   .hamburger {
     font-size: 3rem;
-    width:
+    width: 48px;
+  }
+}
