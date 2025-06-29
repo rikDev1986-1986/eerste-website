@@ -254,5 +254,52 @@ footer {
   margin-bottom: 1.5rem;
 }
 
+.main-nav {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white; /* wit zodat het op zwart zichtbaar is */
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  list-style: none;
+  z-index: 998;
+  min-width: 150px;
+}
+
+.nav-links li {
+  margin: 0.5rem 0;
+  text-align: right;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-links.show {
+  display: block;
+}
 
 

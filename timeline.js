@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const date = new Date(project.date);
         const monthKey = `${date.getFullYear()}-${date.getMonth()}`;
         
-        // Voeg een maandmarker toe als nieuwe maand
+        // Voeg maand-marker toe als het een nieuwe maand is
         if (monthKey !== lastMonth) {
           lastMonth = monthKey;
           const monthHeader = document.createElement("div");
@@ -49,4 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(card);
       });
     });
+  
+  // Hamburger menu toggle
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  }
 });
