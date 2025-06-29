@@ -1,4 +1,3 @@
-// timeline.js
 document.addEventListener("DOMContentLoaded", () => {
   const userLang = navigator.language || navigator.userLanguage;
   const isDutch = userLang.startsWith("nl");
@@ -59,4 +58,15 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks.classList.toggle("show");
     });
   }
+  
+  // Verander kleur hamburger bij scroll
+  window.addEventListener("scroll", () => {
+    if (hamburger) {
+      if (window.scrollY > 100) {
+        hamburger.classList.add("scrolled");
+      } else {
+        hamburger.classList.remove("scrolled");
+      }
+    }
+  }); 
 });
