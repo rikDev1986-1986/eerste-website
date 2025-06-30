@@ -342,11 +342,6 @@ footer {
   flex-direction: column;
 }
 
-.contact-form h1 {
-  width: 100%;
-  display: block;
-  text-align: center;
-
 .contact-form label {
   margin-bottom: 0.5rem;
   font-weight: bold;
