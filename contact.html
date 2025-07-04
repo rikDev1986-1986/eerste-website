@@ -28,6 +28,27 @@
         text-decoration: underline;
       }
 
+      .main-nav {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10;
+      }
+
+      .main-nav a {
+        background-color: var(--primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      .main-nav a:hover {
+        background-color: var(--btn-hover);
+      }
+
       .contact-wrapper {
         display: flex;
         align-items: center;
@@ -84,7 +105,7 @@
   <body>
     <header class="hero">
       <nav class="main-nav">
-        <a href="index.html" class="hero-btn">← Home</a>
+        <a href="index.html">← Home</a>
       </nav>
 
       <div class="hero-content">
@@ -92,6 +113,7 @@
           Contactformulier
         </h1>
       </div>
+
       <div class="arrow-down" onclick="document.getElementById('formulier').scrollIntoView({ behavior: 'smooth' })">
         ↓
       </div>
