@@ -7,25 +7,27 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
-      <div class="hero-content">
-        <h2 class="lang-nl">Bedankt voor je bericht! Ik neem snel contact op 😊</h2>
-        <h2 class="lang-en">Thank you for your message! I'll get back to you soon 😊</h2>
-        <a href="index.html" class="hero-btn lang lang-nl">← Terug naar home</a>
-        <a href="index.html" class="hero-btn lang lang-en">← Back to homepage</a>
-      </div>
-    </header>
+    <main style="padding: 4rem 1rem; text-align: center;">
+      <h2 class="lang-nl" style="margin-bottom: 2rem;">
+        Bedankt voor je bericht! Ik neem snel contact op 😊
+      </h2>
+      <h2 class="lang-en" style="margin-bottom: 2rem;">
+        Thank you for your message! I'll get back to you soon 😊
+      </h2>
+      <a href="index.html" class="hero-btn lang lang-nl">Terug naar Home</a>
+      <a href="index.html" class="hero-btn lang lang-en">Back to Home</a>
+    </main>
 
     <footer>
-      <p>&copy; Rik Dev 2025</p>
+      <p>© Rik Dev 2025</p>
     </footer>
 
     <script>
       const nl = document.querySelectorAll(".lang-nl");
       const en = document.querySelectorAll(".lang-en");
       const isEnglish = navigator.language.startsWith("en");
-      nl.forEach(el => el.style.display = isEnglish ? "none" : "block");
-      en.forEach(el => el.style.display = isEnglish ? "block" : "none");
+      nl.forEach(el => el.style.display = isEnglish ? "none" : "inline-block");
+      en.forEach(el => el.style.display = isEnglish ? "inline-block" : "none");
     </script>
   </body>
 </html>
