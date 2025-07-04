@@ -11,7 +11,7 @@
         bottom: 2rem;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 2rem;
+        font-size: 3rem;
         color: white;
         cursor: pointer;
         animation: bounce 2s infinite;
@@ -26,26 +26,28 @@
       .hero h1 {
         cursor: pointer;
         text-decoration: underline;
+        text-align: center;
+        margin-top: 2rem;
       }
 
       .main-nav {
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        top: 2rem;
+        left: 2rem;
         z-index: 10;
       }
 
-      .main-nav a {
+      .main-nav .hero-btn {
+        padding: 0.8rem 1.6rem;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
         background-color: var(--primary);
         color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
         transition: background 0.3s ease;
       }
 
-      .main-nav a:hover {
+      .main-nav .hero-btn:hover {
         background-color: var(--btn-hover);
       }
 
@@ -105,7 +107,7 @@
   <body>
     <header class="hero">
       <nav class="main-nav">
-        <a href="index.html">← Home</a>
+        <a href="index.html" class="hero-btn">← Home</a>
       </nav>
 
       <div class="hero-content">
@@ -113,7 +115,6 @@
           Contactformulier
         </h1>
       </div>
-
       <div class="arrow-down" onclick="document.getElementById('formulier').scrollIntoView({ behavior: 'smooth' })">
         ↓
       </div>
@@ -121,7 +122,7 @@
 
     <main id="formulier" class="contact-wrapper">
       <form action="https://formspree.io/f/mdkzlzjd" method="POST" class="contact-form">
-        <input type="hidden" name="_redirect" value="bedankt.html" />
+        <input type="hidden" name="_next" value="bedankt.html" />
 
         <div class="form-group">
           <label for="naam" class="lang-nl">Naam:</label>
