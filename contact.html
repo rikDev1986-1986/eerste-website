@@ -137,7 +137,9 @@
 
     <main id="formulier" class="contact-wrapper">
       <form action="https://formspree.io/f/mdkzlzjd" method="POST" class="contact-form">
-        <input type="hidden" name="_redirect" value="bedankt.html" />
+        <noscript>
+  <input type="hidden" name="_redirect" value="bedankt.html" />
+</noscript>
 
         <div class="form-group">
           <label for="naam" class="lang-nl">Naam:</label>
@@ -173,5 +175,30 @@
       nl.forEach(el => el.style.display = isEnglish ? "none" : "block");
       en.forEach(el => el.style.display = isEnglish ? "block" : "none");
     </script>
+    <script>
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // voorkom standaard gedrag
+
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        window.location.href = "bedankt.html";
+      } else {
+        alert("Er ging iets mis. Probeer het opnieuw.");
+      }
+    }).catch(error => {
+      alert("Netwerkfout. Controleer je verbinding.");
+    });
+  });
+</script>
   </body>
 </html>
