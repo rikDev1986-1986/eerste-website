@@ -8,47 +8,50 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1 class="lang-nl">Contactformulier</h1>
-      <h1 class="lang-en">Contact Form</h1>
+    <header class="hero">
+      <nav class="main-nav">
+        <a href="index.html" class="hero-btn">← Home</a>
+      </nav>
+      <div class="hero-content">
+        <h1 class="lang-nl">Contactformulier</h1>
+        <h1 class="lang-en">Contact Form</h1>
+      </div>
     </header>
 
     <main>
-      <form action="https://formspree.io/f/mdkzlzjd" method="POST" class="contact-form">
-        <input type="hidden" name="_redirect" value="bedankt.html" />
+      <section>
+        <form action="https://formspree.io/f/mdkzlzjd" method="POST" class="contact-form">
+          <input type="hidden" name="_redirect" value="bedankt.html" />
 
-        <div class="form-group">
-          <label for="naam" class="lang-nl">Naam:</label>
-          <label for="naam" class="lang-en">Name:</label>
-          <input type="text" id="naam" name="naam" required />
-        </div>
+          <div class="form-group">
+            <label for="naam" class="lang-nl">Naam:</label>
+            <label for="naam" class="lang-en">Name:</label>
+            <input type="text" id="naam" name="naam" required />
+          </div>
 
-        <div class="form-group">
-          <label for="email" class="lang-nl">E-mail:</label>
-          <label for="email" class="lang-en">Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
+          <div class="form-group">
+            <label for="email" class="lang-nl">E-mail:</label>
+            <label for="email" class="lang-en">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
 
-        <div class="form-group">
-          <label for="bericht" class="lang-nl">Bericht:</label>
-          <label for="bericht" class="lang-en">Message:</label>
-          <textarea id="bericht" name="bericht" rows="6" required></textarea>
-        </div>
+          <div class="form-group">
+            <label for="bericht" class="lang-nl">Bericht:</label>
+            <label for="bericht" class="lang-en">Message:</label>
+            <textarea id="bericht" name="bericht" rows="6" required></textarea>
+          </div>
 
-        <div class="form-group">
-          <button type="submit" class="lang-nl">Verstuur</button>
-          <button type="submit" class="lang-en">Send</button>
-        </div>
-        <script>
-  const form = document.querySelector("form");
-  form.addEventListener("submit", function() {
-    setTimeout(function() {
-      window.location.href = "bedankt.html";
-    }, 500); // kleine vertraging om te zorgen dat de mail eerst verzonden wordt
-  });
-</script>
-      </form>
+          <div class="form-group">
+            <button type="submit" class="lang-nl">Verstuur</button>
+            <button type="submit" class="lang-en">Send</button>
+          </div>
+        </form>
+      </section>
     </main>
+
+    <footer>
+      <p>© Rik Dev 2025</p>
+    </footer>
 
     <script>
       const nl = document.querySelectorAll(".lang-nl");
@@ -56,6 +59,13 @@
       const isEnglish = navigator.language.startsWith("en");
       nl.forEach(el => el.style.display = isEnglish ? "none" : "block");
       en.forEach(el => el.style.display = isEnglish ? "block" : "none");
+
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function () {
+        setTimeout(function () {
+          window.location.href = "bedankt.html";
+        }, 500);
+      });
     </script>
   </body>
 </html>
