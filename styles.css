@@ -30,7 +30,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* === HERO HEADER === */
+/* === HEADER HERO === */
 .hero {
   background-image: url("header_desktop.webp");
   background-size: cover;
@@ -66,22 +66,28 @@ body {
 }
 
 .hero-btn {
-  position: absolute;
-  left: 2rem;
-  top: 2rem;
-  padding: 0.7rem 1.5rem;
+  display: inline-block;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  color: white;
+  padding: 1rem 2rem;
   border-radius: 8px;
   font-weight: bold;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: white;
+  font-size: 1.1rem;
   text-decoration: none;
-  z-index: 2;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
-  background: linear-gradient(135deg, var(--accent), var(--primary));
-  transform: scale(1.05);
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  transform: translateY(-2px);
+}
+
+/* Home-knop styling binnen hero */
+.main-nav {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
 }
 
 /* === ARROW === */
@@ -90,7 +96,7 @@ body {
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: white;
   cursor: pointer;
   animation: bounce 2s infinite;
@@ -102,13 +108,128 @@ body {
   50% { transform: translate(-50%, 10px); }
 }
 
-/* === FORM STYLING === */
+/* === MAIN SECTIONS === */
+main {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+section {
+  padding: 4rem 1rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease both;
+}
+
+section:nth-of-type(odd) {
+  background: linear-gradient(to bottom right, #f0f4ff, #e3ecff);
+}
+
+section:nth-of-type(even) {
+  background: linear-gradient(to bottom right, #fff5f5, #ffeaea);
+}
+
+main h2 {
+  font-size: 2rem;
+  position: relative;
+  display: block;
+  margin-block-end: 2rem;
+  color: var(--primary);
+  text-align: center;
+  text-shadow: 0 0 5px #00c6ff, 0 0 10px #00c6ff, 0 0 20px #00c6ff;
+}
+
+main h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  border-radius: 3px;
+}
+
+main p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* === PROJECTS === */
+.projects {
+  background: linear-gradient(to bottom, #fff, #eef1f6);
+}
+
+.projects h3 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.projects h3::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 4px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.project-card {
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  border-left: 6px solid var(--primary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-left-color: var(--accent);
+  box-shadow: 0 12px 25px rgba(0, 198, 255, 0.4);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h4 {
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.project-date {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin: -1rem 1rem 1rem;
+  text-align: right;
+}
+
+/* === CONTACT === */
 .contact-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .contact-form {
@@ -128,7 +249,7 @@ body {
   flex-direction: column;
 }
 
-.contact-form .form-group label {
+.contact-form label {
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: var(--text-light);
@@ -146,19 +267,44 @@ body {
 
 .contact-form button {
   align-self: flex-start;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: linear-gradient(to right, var(--primary), var(--accent));
   color: white;
   padding: 1rem 2rem;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease;
 }
 
 .contact-form button:hover {
-  background: linear-gradient(135deg, var(--accent), var(--primary));
-  transform: scale(1.05);
+  background: linear-gradient(to right, var(--accent), var(--primary));
+}
+
+/* === FOLLOW ME === */
+.follow-me {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: var(--bg);
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.social-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
 }
 
 /* === FOOTER === */
@@ -169,4 +315,24 @@ footer {
   font-size: 0.9rem;
   color: var(--text-light);
   margin-top: auto;
+}
+
+/* === ANIMATIES === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (min-width: 768px) {
+  .hamburger {
+    font-size: 3rem;
+    width: 48px;
+  }
 }
