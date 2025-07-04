@@ -28,9 +28,10 @@ body {
   flex-direction: column;
   min-height: 100vh;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* === HEADER HERO === */
+/* === HEADER === */
 .hero {
   background-image: url("header_desktop.webp");
   background-size: cover;
@@ -48,7 +49,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
@@ -56,56 +57,32 @@ body {
   z-index: 1;
   max-width: 800px;
   padding: 2rem;
+  animation: fadeInUp 1s ease-out both;
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   margin-bottom: 1.5rem;
-  cursor: pointer;
-  text-decoration: underline;
+  text-shadow: 0 0 10px var(--accent);
 }
 
 .hero-btn {
   display: inline-block;
-  background: linear-gradient(to right, var(--primary), var(--accent));
+  background-color: var(--primary);
   color: white;
   padding: 1rem 2rem;
   border-radius: 8px;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
 }
 
 .hero-btn:hover {
-  background: linear-gradient(to right, var(--accent), var(--primary));
-  transform: translateY(-2px);
-}
-
-/* Home-knop styling binnen hero */
-.main-nav {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  z-index: 10;
-}
-
-/* === ARROW === */
-.arrow-down {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.5rem;
-  color: white;
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  z-index: 10;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 10px); }
+  background-color: var(--btn-hover);
+  transform: scale(1.05);
+  box-shadow: 0 4px 25px rgba(0, 198, 255, 0.5);
 }
 
 /* === MAIN SECTIONS === */
@@ -133,20 +110,19 @@ section:nth-of-type(even) {
 
 main h2 {
   font-size: 2rem;
-  position: relative;
-  display: block;
-  margin-block-end: 2rem;
-  color: var(--primary);
   text-align: center;
-  text-shadow: 0 0 5px #00c6ff, 0 0 10px #00c6ff, 0 0 20px #00c6ff;
+  color: var(--primary);
+  text-shadow: 0 0 5px var(--accent);
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
 main h2::after {
   content: '';
   position: absolute;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -10px;
   width: 60px;
   height: 3px;
   background-color: var(--accent);
@@ -159,14 +135,12 @@ main p {
 }
 
 /* === PROJECTS === */
-.projects {
-  background: linear-gradient(to bottom, #fff, #eef1f6);
-}
-
 .projects h3 {
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 2rem;
+  color: var(--primary);
+  text-shadow: 0 0 5px var(--accent);
   position: relative;
 }
 
@@ -223,62 +197,28 @@ main p {
   text-align: right;
 }
 
-/* === CONTACT === */
-.contact-wrapper {
+/* === MONTH SPLITTERS === */
+.month-divider {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   justify-content: center;
-  min-height: 100vh;
-  padding: 2rem 1rem;
+  margin-top: 2rem;
 }
 
-.contact-form {
-  background-color: var(--white);
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  max-width: 700px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.diamond {
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent);
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px var(--accent);
 }
 
-.contact-form .form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form label {
+.month-label {
   font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: var(--text-light);
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 100%;
-  resize: vertical;
-}
-
-.contact-form button {
-  align-self: flex-start;
-  background: linear-gradient(to right, var(--primary), var(--accent));
-  color: white;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: linear-gradient(to right, var(--accent), var(--primary));
+  color: var(--primary);
+  font-size: 1.3rem;
+  text-shadow: 0 1px 2px white;
 }
 
 /* === FOLLOW ME === */
@@ -317,7 +257,71 @@ footer {
   margin-top: auto;
 }
 
-/* === ANIMATIES === */
+/* === HAMBURGER MENU === */
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  display: block;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.hamburger.scrolled span {
+  background-color: black;
+}
+
+.nav-links {
+  display: none;
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 1rem;
+  border-radius: 8px;
+  list-style: none;
+  z-index: 998;
+  min-width: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links li {
+  margin: 0.5rem 0;
+  text-align: right;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-links.show {
+  display: block;
+}
+
+/* === ANIMATIONS === */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -326,13 +330,5 @@ footer {
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* === RESPONSIVE === */
-@media (min-width: 768px) {
-  .hamburger {
-    font-size: 3rem;
-    width: 48px;
   }
 }
