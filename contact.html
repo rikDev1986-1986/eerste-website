@@ -5,104 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Rikwebs</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .arrow-down {
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 3rem;
-        color: white;
-        cursor: pointer;
-        animation: bounce 2s infinite;
-        z-index: 10;
-      }
-
-      @keyframes bounce {
-        0%, 100% { transform: translate(-50%, 0); }
-        50% { transform: translate(-50%, 10px); }
-      }
-
-      .hero h1 {
-        cursor: pointer;
-        text-decoration: underline;
-        text-align: center;
-        margin-top: 2rem;
-      }
-
-      .main-nav {
-        position: absolute;
-        top: 2rem;
-        left: 2rem;
-        z-index: 10;
-      }
-
-      .main-nav .hero-btn {
-        padding: 0.8rem 1.6rem;
-        border-radius: 8px;
-        font-weight: bold;
-        text-decoration: none;
-        background-color: var(--primary);
-        color: white;
-        transition: background 0.3s ease;
-      }
-
-      .main-nav .hero-btn:hover {
-        background-color: var(--btn-hover);
-      }
-
-      .contact-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 2rem 1rem;
-      }
-
-      .contact-form {
-        background-color: var(--white);
-        padding: 3rem 2rem;
-        border-radius: 16px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-        max-width: 700px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .contact-form .form-group label {
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-        color: var(--text-light);
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        padding: 1rem;
-        font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        width: 100%;
-        resize: vertical;
-      }
-
-      .contact-form button {
-        align-self: flex-start;
-        background-color: var(--primary);
-        color: white;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
-
-      .contact-form button:hover {
-        background-color: var(--btn-hover);
-      }
-    </style>
   </head>
   <body>
     <header class="hero">
@@ -115,14 +17,19 @@
           Contactformulier
         </h1>
       </div>
+
       <div class="arrow-down" onclick="document.getElementById('formulier').scrollIntoView({ behavior: 'smooth' })">
         ↓
       </div>
     </header>
 
     <main id="formulier" class="contact-wrapper">
-      <form action="https://formspree.io/f/mdkzlzjd" method="POST" class="contact-form">
-        <input type="hidden" name="_next" value="bedankt.html" />
+      <form
+        action="https://formspree.io/f/mdkzlzjd"
+        method="POST"
+        class="contact-form"
+      >
+        <input type="hidden" name="_redirect" value="bedankt.html" />
 
         <div class="form-group">
           <label for="naam" class="lang-nl">Naam:</label>
